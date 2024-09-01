@@ -2,6 +2,8 @@ import "./App.css";
 import headerImage from "./assets/rick_morty_PNG20.png";
 import rickImage from "./assets/rick.jpg";
 import mortyImage from "./assets/morty.png";
+import rickAnimation from "./lotties/rickAnimation.json";
+import Lottie from "lottie-react";
 
 const App = () => {
   return (
@@ -46,7 +48,7 @@ const App = () => {
         <section className="w-11/12 h-auto p-5 rounded-xl shadow-lg shadow-orange-900 bg-orange-700">
           <div className="w-full flex mobile:flex-col-reverse mobile:items-center sm:flex-row sm:justify-around">
             <div className="sm:w-1/2 mobile:w-full">
-              <h2 className="text-white font-extrabold text-2xl">
+              <h2 className="text-white font-extrabold text-2xl mobile:my-4 sm:my-0">
                 Who is Rick Sunchez?
               </h2>
               <p>
@@ -76,7 +78,7 @@ const App = () => {
         <section className="w-11/12 h-auto p-5 rounded-xl shadow-lg shadow-orange-900 bg-orange-700 mt-5">
           <div className="w-full flex mobile:flex-col-reverse mobile:items-center sm:flex-row sm:justify-around">
             <div className="sm:w-1/2 mobile:w-full">
-              <h2 className="text-white font-extrabold text-2xl">
+              <h2 className="text-white font-extrabold text-2xl mobile:my-4 sm:my-0">
                 Who is Morty Smith ?
               </h2>
               <p>
@@ -102,6 +104,20 @@ const App = () => {
                 alt="Rick sanchez image"
               />
             </div>
+          </div>
+        </section>
+
+        <section className="xl:w-4/5 w-5/6 h-auto flex mt-24 mobile:flex-col-reverse sm:flex-row items-center justify-center mx-auto">
+          <div className="xl:w-1/2 mobile:w-full flex justify-center items-start flex-col">
+            <h3 className="mobile:text-4xl lg:text-7xl text-gray-700 font-extrabold">
+              Explore all Characters just by clicking the below button
+            </h3>
+            <button className="w-52 md:w-48 h-14 md:h-16 mt-4 text-center text-white text-2xl font-bold hover:bg-orange-600 transition-all duration-300 bg-orange-700 rounded-3xl">
+              Explore
+            </button>
+          </div>
+          <div>
+            <Lottie animationData={rickAnimation} loop={true} />
           </div>
         </section>
       </main>
