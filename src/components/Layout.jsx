@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 const Layout = () => {
   return (
     <>
+      <div className="w-full h-screen bg-[url('assets/image-asset.jpeg')] fixed top-0 left-0 blur-md bg-center bg-cover bg-no-repeat"></div>
       <div className="w-full h-16 fixed backdrop-blur-2xl top-0 bg-white opacity-5 z-10"></div>
       <header className="w-full h-16 fixed backdrop-blur-2xl top-0 z-10">
         <nav className="w-full h-full">

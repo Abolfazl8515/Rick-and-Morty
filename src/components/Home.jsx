@@ -7,7 +7,6 @@ import Lottie from "lottie-react";
 const Home = () => {
   return (
     <div>
-      <div className="w-full h-screen bg-[url('assets/image-asset.jpeg')] fixed top-0 left-0 blur-md bg-center bg-cover bg-no-repeat"></div>
       <div className="w-full h-screen relative">
         <div className="xl:w-3/5 lg:w-4/5 w-5/6 h-screen flex mt-24 mobile:flex-col-reverse sm:flex-row items-center justify-center mx-auto">
           <div className="mobile:w-full md:w-1/2 flex items-start justify-center flex-col">
