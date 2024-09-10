@@ -10,10 +10,10 @@ const Home = () => {
       <div className="w-full h-screen relative">
         <div className="xl:w-3/5 lg:w-4/5 w-5/6 h-screen flex mt-24 mobile:flex-col-reverse sm:flex-row items-center justify-center mx-auto">
           <div className="mobile:w-full md:w-1/2 flex items-start justify-center flex-col">
-            <h1 className="text-5xl md:text-7xl text-gray-700 font-extrabold">
+            <h1 className="text-5xl md:text-7xl text-primary font-extrabold">
               Rick and Morty animation
             </h1>
-            <button className="w-52 md:w-48 h-14 md:h-16 mt-4 text-center text-white text-2xl font-bold hover:bg-orange-600 transition-all duration-300 bg-orange-700 rounded-3xl">
+            <button className="w-52 md:w-48 h-14 md:h-16 mt-4 text-center text-white text-2xl font-bold hover:bg-hover transition-all duration-300 bg-main rounded-3xl">
               let`s go!
             </button>
           </div>
@@ -28,7 +28,7 @@ const Home = () => {
         </div>
       </div>
       <div className="w-full h-auto flex items-center justify-start flex-col relative top-24">
-        <section className="w-11/12 h-auto p-5 rounded-xl shadow-lg shadow-orange-900 bg-orange-700">
+        <section className="w-11/12 h-auto p-5 rounded-xl shadow-lg shadow-orange-900 bg-main">
           <div className="w-full flex mobile:flex-col-reverse mobile:items-center sm:flex-row sm:justify-around">
             <div className="sm:w-1/2 mobile:w-full">
               <h2 className="text-white font-extrabold text-2xl mobile:my-4 sm:my-0">
@@ -58,7 +58,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section className="w-11/12 h-auto p-5 rounded-xl shadow-lg shadow-orange-900 bg-orange-700 mt-5">
+        <section className="w-11/12 h-auto p-5 rounded-xl shadow-lg shadow-orange-900 bg-main mt-5">
           <div className="w-full flex mobile:flex-col-reverse mobile:items-center sm:flex-row sm:justify-around">
             <div className="sm:w-1/2 mobile:w-full">
               <h2 className="text-white font-extrabold text-2xl mobile:my-4 sm:my-0">
@@ -92,10 +92,10 @@ const Home = () => {
 
         <section className="xl:w-4/5 w-5/6 h-auto flex mt-24 mobile:flex-col-reverse sm:flex-row items-center justify-center mx-auto">
           <div className="xl:w-1/2 mobile:w-full flex justify-center items-start flex-col">
-            <h3 className="mobile:text-4xl lg:text-7xl text-gray-700 font-extrabold">
+            <h3 className="mobile:text-4xl lg:text-7xl text-primary font-extrabold">
               Explore all Characters just by clicking the below button
             </h3>
-            <button className="w-52 md:w-48 h-14 md:h-16 mt-4 text-center text-white text-2xl font-bold hover:bg-orange-600 transition-all duration-300 bg-orange-700 rounded-3xl">
+            <button className="w-52 md:w-48 h-14 md:h-16 mt-4 text-center text-white text-2xl font-bold hover:bg-hover transition-all duration-300 bg-main rounded-3xl">
               Explore
             </button>
           </div>
