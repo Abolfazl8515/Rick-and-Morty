@@ -27,7 +27,7 @@ const SelectedCharacter = ({ selectedCharacterId }) => {
     if (selectedCharacterId) fetchSelectedCharacter();
   }, [selectedCharacterId]);
   return (
-    <div className="w-1/3 flex flex-col">
+    <div className="lg:w-1/4 mobile:w-2/3 flex mobile:mx-auto flex-col md:mt-10">
       <div>
         <img
           className="rounded-lg"
@@ -39,7 +39,7 @@ const SelectedCharacter = ({ selectedCharacterId }) => {
         <h3 className="font-extrabold text-2xl text-primary">
           {selectedCharacter.name}
         </h3>
-        <p className="w-1/2 text-xl border-b-2 border-primary">
+        <p className="full text-xl border-b-2 border-primary">
           {selectedCharacter.species} - {selectedCharacter.gender}
         </p>
         <div className="w-full flex items-center my-2">
@@ -54,10 +54,10 @@ const SelectedCharacter = ({ selectedCharacterId }) => {
           ></span>
           <p>{selectedCharacter.status}</p>
         </div>
-        <h4 className="w-1/2 font-bold text-xl text-primary  border-t-2 border-primary">
+        <h4 className="full font-bold text-xl text-primary  border-t-2 border-primary">
           List of Episodes
         </h4>
-        <div className="w-1/2 h-28 overflow-y-auto scrollbar flex flex-col mt-2">
+        <div className="w-full h-28 overflow-y-auto scrollbar flex flex-col mt-2">
           {characterEpisodes?.map((ep) => (
             <div
               key={ep.id}

@@ -1,7 +1,7 @@
 const Character = ({ character, hanleCharacterClick }) => {
   return (
     <div
-      className="w-64 h-24 flex justify-between items-center bg-orange-700 cursor-pointer rounded-xl m-2"
+      className="mobile:w-4/5 md:w-64 h-24 flex justify-between items-center bg-orange-700 cursor-pointer rounded-xl m-2"
       onClick={hanleCharacterClick}
     >
       <div className="w-1/3 h-full">

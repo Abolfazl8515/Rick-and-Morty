@@ -35,7 +35,7 @@ const Pagination = ({
   const pages = generatePageNumbers();
 
   return (
-    <div className="flex justify-center space-x-3 my-4">
+    <div className="mobile:w-11/12 flex justify-center space-x-3 my-4">
       {/* Previous Button */}
       <button
         onClick={() => handlePageChange(currentPage - 1)}
