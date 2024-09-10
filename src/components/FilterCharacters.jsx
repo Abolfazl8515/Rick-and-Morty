@@ -1,4 +1,12 @@
 const FilterCharacters = ({ search, setSearch, filter, setFilter }) => {
+  const handleChange = (e, filterName) => {
+    if (e.target.value === "default") {
+      setFilter((prev) => ({ ...prev, [filterName]: "" }));
+    } else {
+      setFilter((prev) => ({ ...prev, [filterName]: e.target.value }));
+    }
+  };
+
   return (
     <div className="w-full h-full flex flex-col items-center bg-primary rounded-lg">
       <div className="w-full h-1/3 flex items-center">
@@ -12,9 +20,7 @@ const FilterCharacters = ({ search, setSearch, filter, setFilter }) => {
       </div>
       <div className="w-full flex flex-col">
         <select
-          onChange={(e) =>
-            setFilter((prev) => ({ ...prev, status: e.target.value }))
-          }
+          onChange={(e) => handleChange(e, "status")}
           value={filter.status}
           className="w-11/12 mx-auto h-14 mt-2 bg-transparent rounded-xl border border-white text-white lg:text-base mobile:text-lg text-center"
         >
@@ -33,9 +39,7 @@ const FilterCharacters = ({ search, setSearch, filter, setFilter }) => {
         </select>
         <select
           value={filter.gender}
-          onChange={(e) =>
-            setFilter((prev) => ({ ...prev, gender: e.target.value }))
-          }
+          onChange={(e) => handleChange(e, "gender")}
           className="w-11/12 mx-auto h-14 mt-2 bg-transparent rounded-xl border border-white text-white lg:text-base mobile:text-lg text-center"
         >
           <option value="default" className="bg-primary text-white">
