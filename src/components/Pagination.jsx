@@ -1,17 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setPageByAmount } from "../features/currentPageSlice/currentPageSlice";
 
-const Pagination = ({
-  totalItems,
-  itemsPerPage,
-  currentPage,
-  onPageChange,
-}) => {
+const Pagination = () => {
+  const totalItems = useSelector(
+    (state) => state.characters.charactersData?.info?.count
+  );
+  const itemsPerPage = 20;
+  const currentPage = useSelector((state) => state.currentPage);
+  const filters = useSelector((state) => state.filterCharacters);
+  const search = useSelector((state) => state.searchCharacter);
+  const dispath = useDispatch();
+
   const totalPages = Math.ceil(totalItems / itemsPerPage);
-  const [visibleRange, setVisibleRange] = useState(5);
+  const visibleRange = 5;
 
   const handlePageChange = (pageNumber) => {
-    onPageChange(pageNumber);
+    dispath(setPageByAmount(pageNumber));
   };
+
+  useEffect(() => handlePageChange(1), [filters, search]);
 
   const generatePageNumbers = () => {
     let pages = [];

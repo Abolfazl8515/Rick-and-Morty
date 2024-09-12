@@ -4,6 +4,11 @@ import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import CharactersPage from "./pages/CharactersPage";
+import axios from "axios";
+
+export const axiosConfig = axios.create({
+  baseURL: "https://rickandmortyapi.com/api",
+});
 
 const App = () => {
   return (

@@ -1,7 +1,7 @@
-import Characters from "../components/Characters";
+import CharacterList from "../components/CharacterList";
 
 const CharactersPage = () => {
-  return <Characters />;
+  return <CharacterList />;
 };
 
 export default CharactersPage;

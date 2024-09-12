@@ -1,9 +1,27 @@
-const FilterCharacters = ({ search, setSearch, filter, setFilter }) => {
+import { useDispatch, useSelector } from "react-redux";
+import {
+  filterCharacterGender,
+  filterCharacterStatus,
+} from "../features/filterCharactersSlice/filterCharactersSlice";
+import { searchCharacter } from "../features/searchCharacterSlice/searchCharacterSlice";
+
+const FilterCharacters = () => {
+  const search = useSelector((state) => state.searchCharacter);
+  const filter = useSelector((state) => state.searchCharacter);
+  const dispath = useDispatch();
   const handleChange = (e, filterName) => {
     if (e.target.value === "default") {
-      setFilter((prev) => ({ ...prev, [filterName]: "" }));
+      if (filterName === "status") {
+        dispath(filterCharacterStatus({ value: "" }));
+      } else {
+        dispath(filterCharacterGender({ value: "" }));
+      }
     } else {
-      setFilter((prev) => ({ ...prev, [filterName]: e.target.value }));
+      if (filterName === "status") {
+        dispath(filterCharacterStatus({ value: e.target.value }));
+      } else {
+        dispath(filterCharacterGender({ value: e.target.value }));
+      }
     }
   };
 
@@ -15,7 +33,7 @@ const FilterCharacters = ({ search, setSearch, filter, setFilter }) => {
           className="w-11/12 mx-auto bg-transparent border-b border-b-white outline-none focus:outline-none text-white mobile:text-lg lg:text-lg"
           placeholder="Search characters..."
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => dispath(searchCharacter(e.target.value))}
         />
       </div>
       <div className="w-full flex flex-col">

@@ -1,30 +1,23 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchSelectedCharacter } from "../features/selectedCharacterInfoSlice/selectedCharacterInfoSlice";
+import { fetchEpisodes } from "../features/characterEpisodesInfoSlice/characterEpisodesInfoSlice";
 
-const SelectedCharacter = ({ selectedCharacterId }) => {
-  const [selectedCharacter, setSelectedCharacter] = useState({});
-  const [characterEpisodes, setCharacterEpisodes] = useState([]);
-
-  const fetchSelectedCharacter = async () => {
-    const characterRequest = await axios.get(
-      `https://rickandmortyapi.com/api/character/${selectedCharacterId}`
-    );
-    const res = await characterRequest.data;
-    const episodesIds = res.episode?.map((episode) =>
-      episode.split("/").at(-1)
-    );
-    const episodeRequest = await axios.get(
-      `https://rickandmortyapi.com/api/episode/${episodesIds}`
-    );
-    const episodeRes = await episodeRequest.data;
-    console.log(characterEpisodes);
-
-    setSelectedCharacter(res);
-    setCharacterEpisodes(Array.isArray(episodeRes) ? episodeRes : [episodeRes]);
-  };
+const SelectedCharacter = () => {
+  const selectedCharacterId = useSelector((state) => state.selectedId);
+  const selectedCharacter = useSelector(
+    (state) => state.selectedCharacterInfo.characterData
+  );
+  const characterEpisodes = useSelector(
+    (state) => state.characterEpisodesInfo.episodesData
+  );
+  const dispath = useDispatch();
 
   useEffect(() => {
-    if (selectedCharacterId) fetchSelectedCharacter();
+    if (selectedCharacterId) {
+      dispath(fetchSelectedCharacter());
+      dispath(fetchEpisodes());
+    }
   }, [selectedCharacterId]);
   return (
     <div className="lg:w-1/4 mobile:w-2/3 flex mobile:mx-auto flex-col md:mt-10">
