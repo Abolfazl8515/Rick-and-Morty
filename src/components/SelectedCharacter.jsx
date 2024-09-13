@@ -2,11 +2,15 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSelectedCharacter } from "../features/selectedCharacterInfoSlice/selectedCharacterInfoSlice";
 import { fetchEpisodes } from "../features/characterEpisodesInfoSlice/characterEpisodesInfoSlice";
+import Loading from "./Loading";
 
 const SelectedCharacter = () => {
   const selectedCharacterId = useSelector((state) => state.selectedId);
   const selectedCharacter = useSelector(
     (state) => state.selectedCharacterInfo.characterData
+  );
+  const selectedCharacterLoading = useSelector(
+    (state) => state.selectedCharacterInfo.loading
   );
   const characterEpisodes = useSelector(
     (state) => state.characterEpisodesInfo.episodesData
@@ -19,7 +23,10 @@ const SelectedCharacter = () => {
       dispath(fetchEpisodes());
     }
   }, [selectedCharacterId]);
-  return (
+
+  return selectedCharacterLoading ? (
+    <Loading />
+  ) : (
     <div className="lg:w-1/4 mobile:w-2/3 flex mobile:mx-auto flex-col md:mt-10">
       <div>
         <img

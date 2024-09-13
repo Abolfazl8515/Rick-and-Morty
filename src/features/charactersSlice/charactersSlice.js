@@ -15,6 +15,9 @@ export const fetchCharacters = createAsyncThunk(
   }
 );
 
+const ERR_BAD_REQUEST = "ERR_BAD_REQUEST";
+const ERR_INTERNET_DISCONNECTED = "ERR_INTERNET_DISCONNECTED";
+
 const initialState = {
   charactersData: [],
   loading: false,
@@ -39,8 +42,13 @@ export const charactersSlice = createSlice({
     builder.addCase(fetchCharacters.rejected, (state, action) => {
       state.loading = false;
       state.charactersData = [];
+      console.log(state.error);
+
       state.error =
-        action.error.code === "ERR_BAD_REQUEST" ? "There is nothing here" : "";
+        action.error.code === ERR_BAD_REQUEST
+          ? "There is nothing here"
+          : ERR_INTERNET_DISCONNECTED &&
+            "Please check your internet connection";
       toast.error(state.error, {
         position: "top-right",
         autoClose: 3000,

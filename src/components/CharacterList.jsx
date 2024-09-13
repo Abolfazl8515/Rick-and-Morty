@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCharacters } from "../features/charactersSlice/charactersSlice";
 import { isShow } from "../features/isShowSingleCharacterSlice/isShowSingleCharacterSlice";
 import { select } from "../features/selectedIdSlice/selectedIdSlice";
+import Loading from "./Loading";
 
 const CharacterList = () => {
   const characters = useSelector((state) => state.characters);
@@ -49,13 +50,17 @@ const CharacterList = () => {
                 : "lg:w-2/3 mobile:w-4/5 h-[530px] flex flex-wrap justify-center overflow-y-auto scrollbar-hide"
             }`}
           >
-            {characters.charactersData?.results?.map((c) => (
-              <Character
-                key={c.id}
-                character={c}
-                hanleCharacterClick={() => handleCharacterClick(c.id)}
-              />
-            ))}
+            {characters.loading ? (
+              <Loading />
+            ) : (
+              characters.charactersData?.results?.map((c) => (
+                <Character
+                  key={c.id}
+                  character={c}
+                  hanleCharacterClick={() => handleCharacterClick(c.id)}
+                />
+              ))
+            )}
           </div>
         </div>
         {isShowSingleCharacter && <SelectedCharacter />}
