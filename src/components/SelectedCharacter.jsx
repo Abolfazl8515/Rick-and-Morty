@@ -36,7 +36,7 @@ const SelectedCharacter = () => {
         />
       </div>
       <div className="w-full flex flex-col">
-        <h3 className="font-extrabold text-2xl text-primary">
+        <h3 className="font-extrabold text-2xl text-primary my-3">
           {selectedCharacter.name}
         </h3>
         <p className="full text-xl border-b-2 border-primary">
