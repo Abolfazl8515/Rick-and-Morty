@@ -13,7 +13,7 @@ const Pagination = () => {
   const dispath = useDispatch();
 
   const totalPages = Math.ceil(totalItems / itemsPerPage);
-  const visibleRange = 5;
+  const visibleRange = 3;
 
   const handlePageChange = (pageNumber) => {
     dispath(setPageByAmount(pageNumber));
@@ -60,7 +60,7 @@ const Pagination = () => {
         <>
           <button
             onClick={() => handlePageChange(1)}
-            className="w-8 h-8 flex items-center justify-center mx-4 bg-gray-200 hover:bg-orange-300 rounded"
+            className="md:w-8 mobile:w-12 h-8 flex items-center justify-center mx-4 bg-gray-200 hover:bg-orange-300 rounded"
           >
             1
           </button>
@@ -73,7 +73,7 @@ const Pagination = () => {
         <button
           key={page}
           onClick={() => handlePageChange(page)}
-          className={`w-8 h-8 flex items-center justify-center mx-4 bg-gray-200 hover:bg-orange-300 rounded ${
+          className={`md:w-8 h-8 mobile:w-14 flex items-center justify-center md:mx-4 bg-gray-200 hover:bg-orange-300 rounded ${
             currentPage === page && "bg-orange-500 text-white cursor-pointer"
           }`}
         >
@@ -87,7 +87,7 @@ const Pagination = () => {
           <span className="px-3 py-1">...</span>
           <button
             onClick={() => handlePageChange(totalPages)}
-            className="w-8 h-8 flex items-center justify-center mx-4 bg-gray-200 hover:bg-orange-300 rounded hover:text-white"
+            className="md:w-8 mobile:w-12 h-8 flex items-center justify-center mx-4 bg-gray-200 hover:bg-orange-300 rounded hover:text-white"
           >
             {totalPages}
           </button>
