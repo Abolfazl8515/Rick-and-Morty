@@ -14,9 +14,11 @@ const Home = () => {
             <h1 className="text-5xl md:text-7xl text-primary font-extrabold">
               Rick and Morty animation
             </h1>
-            <button className="w-52 md:w-48 h-14 md:h-16 mt-4 text-center text-white text-2xl font-bold hover:bg-hover transition-all duration-300 bg-main rounded-3xl">
-              <Link to="characters">let`s go!</Link>
-            </button>
+            <Link to="characters">
+              <button className="w-52 md:w-48 h-14 md:h-16 mt-4 text-center text-white text-2xl font-bold hover:bg-hover transition-all duration-300 bg-main rounded-3xl">
+                let`s go!
+              </button>
+            </Link>
           </div>
           <div className="w-60 flex items-center justify-center">
             <img
@@ -96,9 +98,11 @@ const Home = () => {
             <h3 className="mobile:text-4xl lg:text-7xl text-primary font-extrabold">
               Explore all Characters just by clicking the below button
             </h3>
-            <button className="w-52 md:w-48 h-14 md:h-16 mt-4 text-center text-white text-2xl font-bold hover:bg-hover transition-all duration-300 bg-main rounded-3xl">
-              <Link to="characters">Explore</Link>
-            </button>
+            <Link to="characters">
+              <button className="w-52 md:w-48 h-14 md:h-16 mt-4 text-center text-white text-2xl font-bold hover:bg-hover transition-all duration-300 bg-main rounded-3xl">
+                Explore
+              </button>
+            </Link>
           </div>
           <div>
             <Lottie animationData={rickAnimation} loop={true} />
