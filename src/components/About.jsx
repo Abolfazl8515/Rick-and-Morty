@@ -3,9 +3,9 @@ import aboutImage from "../assets/aboutImage.jpg";
 const About = () => {
   return (
     <section className="w-11/12 h-auto mx-auto p-5 rounded-xl shadow-lg shadow-orange-900 bg-orange-700 relative top-24">
-      <div className="w-full flex mobile:flex-col-reverse mobile:items-center sm:flex-row sm:justify-around">
-        <div className="sm:w-1/2 mobile:w-full">
-          <h2 className="text-white font-extrabold text-2xl mobile:my-4 sm:my-0">
+      <div className="w-full flex mobile:flex-col-reverse mobile:items-center lg:flex-row lg:justify-around">
+        <div className="lg:w-1/2 mobile:w-full">
+          <h2 className="text-white font-extrabold text-2xl mobile:my-4 lg:my-0">
             What is Rick and Morty?
           </h2>
           <p>
