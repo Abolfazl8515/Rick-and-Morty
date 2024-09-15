@@ -3,7 +3,7 @@ import loadingAnimation from "../lotties/loadingAnimation.json";
 
 const Loading = () => {
   return (
-    <div className="w-64 h-28 mobile:my-20 md:my-0 mx-auto flex flex-col justify-center items-center">
+    <div className="w-64 h-28 my-20 mx-auto flex flex-col justify-center items-center">
       <Lottie animationData={loadingAnimation} loop={true} />
       <button
         type="button"
