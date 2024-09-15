@@ -3,6 +3,7 @@ import rickImage from "../assets/rick.jpg";
 import mortyImage from "../assets/morty.png";
 import rickAnimation from "../lotties/rickAnimation.json";
 import Lottie from "lottie-react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -14,7 +15,7 @@ const Home = () => {
               Rick and Morty animation
             </h1>
             <button className="w-52 md:w-48 h-14 md:h-16 mt-4 text-center text-white text-2xl font-bold hover:bg-hover transition-all duration-300 bg-main rounded-3xl">
-              let`s go!
+              <Link to="characters">let`s go!</Link>
             </button>
           </div>
           <div className="w-60 flex items-center justify-center">
@@ -96,7 +97,7 @@ const Home = () => {
               Explore all Characters just by clicking the below button
             </h3>
             <button className="w-52 md:w-48 h-14 md:h-16 mt-4 text-center text-white text-2xl font-bold hover:bg-hover transition-all duration-300 bg-main rounded-3xl">
-              Explore
+              <Link to="characters">Explore</Link>
             </button>
           </div>
           <div>
