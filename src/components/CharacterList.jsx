@@ -19,6 +19,7 @@ const CharacterList = () => {
   );
   const searchCharacter = useSelector((state) => state.searchCharacter);
   const filterCharacters = useSelector((state) => state.filterCharacters);
+  const selectedId = useSelector((state) => state.selectedId);
   const dispath = useDispatch();
 
   useEffect(() => {
@@ -26,8 +27,13 @@ const CharacterList = () => {
   }, [currentPage, searchCharacter, filterCharacters]);
 
   const handleCharacterClick = (id) => {
-    dispath(isShow(true));
-    dispath(select(id));
+    if (selectedId === id) {
+      dispath(isShow(false));
+      dispath(select(null));
+    } else {
+      dispath(isShow(true));
+      dispath(select(id));
+    }
   };
 
   return (
