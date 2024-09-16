@@ -10,7 +10,7 @@ const Character = ({ character, hanleCharacterClick }) => {
       <div
         className={`w-full h-full absolute top-0 left-0 bg-gray-500 opacity-75 transition-all ${
           selectedId === character.id ? "flex" : "group-hover:flex hidden"
-        } justify-center items-center rounded-lg z-20`}
+        } justify-center items-center rounded-lg`}
       >
         {selectedId === character.id ? (
           <svg
