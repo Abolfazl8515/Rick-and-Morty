@@ -26,7 +26,7 @@ const FilterCharacters = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col items-center bg-primary rounded-lg">
+    <div className="w-full lg:min-w-96 h-full flex flex-col items-center bg-primary rounded-lg">
       <div className="w-full h-1/3 flex items-center">
         <input
           type="text"

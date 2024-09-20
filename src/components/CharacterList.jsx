@@ -46,16 +46,10 @@ const CharacterList = () => {
               : "lg:w-full flex lg:justify-around mobile:mt-10 mobile:flex-col md:flex-row md:items-start mobile:items-center"
           }
         >
-          <div className="lg:w-1/4 mobile:w-11/12 mx-auto h-56 flex mt-2 ml-4 ">
+          <div className="lg:w-2/6 mobile:w-11/12 mx-auto h-56 flex mt-2 ml-4 ">
             <FilterCharacters />
           </div>
-          <div
-            className={`${
-              isShowSingleCharacter
-                ? "lg:w-2/3 mobile:w-4/5 h-[530px] flex flex-wrap justify-center overflow-y-auto scrollbar-hide"
-                : "lg:w-2/3 mobile:w-4/5 h-[530px] flex flex-wrap justify-center overflow-y-auto scrollbar-hide"
-            }`}
-          >
+          <div className="lg:w-2/3 mobile:w-4/5 lg:min-w-[530px] h-[530px] flex flex-wrap justify-center overflow-y-auto scrollbar-hide">
             {characters.loading ? (
               <Loading />
             ) : (
