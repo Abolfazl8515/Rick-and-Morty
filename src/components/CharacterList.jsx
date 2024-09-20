@@ -37,7 +37,7 @@ const CharacterList = () => {
   };
 
   return (
-    <div className="w-full h-auto relative top-20 flex flex-col items-center">
+    <div className="w-full h-auto mt-16 flex flex-col items-center">
       <div className="lg:w-11/12 mobile:w-full mx-auto h-auto flex mobile:flex-col-reverse lg:flex-row lg:justify-between flex-wrap">
         <div
           className={
@@ -46,7 +46,7 @@ const CharacterList = () => {
               : "lg:w-full flex lg:justify-around mobile:mt-10 mobile:flex-col md:flex-row md:items-start mobile:items-center"
           }
         >
-          <div className="lg:w-2/6 mobile:w-11/12 mx-auto h-56 flex mt-2 ml-4 ">
+          <div className="lg:w-2/6 mobile:w-11/12 mx-auto h-56 flex mt-2 ">
             <FilterCharacters />
           </div>
           <div className="lg:w-2/3 mobile:w-4/5 lg:min-w-[530px] h-[530px] flex flex-wrap justify-center overflow-y-auto scrollbar-hide">

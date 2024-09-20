@@ -12,10 +12,8 @@ const Layout = () => {
       : "w-full h-full flex items-center justify-center";
 
   return (
-    <div className="w-full flex flex-col min-h-screen max-w-screen-2xl justify-between items-center mx-auto">
-      <div className="w-full h-screen bg-[#cb9378] fixed top-0 left-0 blur-md bg-center bg-cover bg-no-repeat"></div>
-      <div className="w-full h-16 fixed backdrop-blur-2xl top-0 bg-white opacity-5 z-10"></div>
-      <header className="w-full h-16 fixed backdrop-blur-2xl top-0 z-10">
+    <div className="w-full h-full min-h-screen flex flex-col max-w-screen-2xl justify-between items-center mx-auto">
+      <header className="w-full h-16 fixed backdrop-blur-2xl top-0 z-10 bg-white bg-opacity-25">
         <nav className="w-full h-full">
           <ul className="w-full h-full flex items-center justify-center">
             {navbarTexts.map((item) => (
@@ -34,7 +32,7 @@ const Layout = () => {
       <main className="mb-16">
         <Outlet />
       </main>
-      <footer className="w-3/4 mx-auto flex justify-around items-center relative top-28 mt-auto">
+      <footer className="w-3/4 h-52 mx-auto flex justify-around items-center mt-auto">
         <div className="size-16 flex justify-center items-center rounded-full hover:bg-slate-600 cursor-pointer transition-colors bg-primary">
           <a
             href="https://www.instagram.com/front.jsx/"
