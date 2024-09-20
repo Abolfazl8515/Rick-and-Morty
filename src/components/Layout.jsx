@@ -12,7 +12,7 @@ const Layout = () => {
       : "w-full h-full flex items-center justify-center";
 
   return (
-    <div className="flex flex-col min-h-screen justify-between">
+    <div className="w-full flex flex-col min-h-screen max-w-screen-2xl justify-between items-center mx-auto">
       <div className="w-full h-screen bg-[#cb9378] fixed top-0 left-0 blur-md bg-center bg-cover bg-no-repeat"></div>
       <div className="w-full h-16 fixed backdrop-blur-2xl top-0 bg-white opacity-5 z-10"></div>
       <header className="w-full h-16 fixed backdrop-blur-2xl top-0 z-10">
